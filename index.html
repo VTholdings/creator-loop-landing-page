@@ -271,22 +271,24 @@
         window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
     }
 
-    function setFormLinks() {
-        const formUrl = "https://forms.gle/p1E9XzprcEDEyaGP6";
+         function setFormLinks() {
+    const heroBtn = document.getElementById("hero-cta");
+    const footerBtn = document.getElementById("footer-cta");
 
-        const heroBtn = document.getElementById("hero-cta");
-        const footerBtn = document.getElementById("footer-cta");
-
-        if (heroBtn) {
-            heroBtn.href = formUrl;
-            heroBtn.target = "_blank";
-        }
-
-        if (footerBtn) {
-            footerBtn.href = formUrl;
-            footerBtn.target = "_blank";
-        }
+    function openCreatorIntake(event) {
+        event.preventDefault();
+        window._klOnsite = window._klOnsite || [];
+        window._klOnsite.push(["openForm", "VUcHuG"]);
     }
+
+    if (heroBtn) {
+        heroBtn.addEventListener("click", openCreatorIntake);
+    }
+
+    if (footerBtn) {
+        footerBtn.addEventListener("click", openCreatorIntake);
+    }
+}
 
     document.addEventListener('DOMContentLoaded', setFormLinks);
 </script>
