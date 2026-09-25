@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Submit Content | CreatorLoop</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #0d0d0d;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      padding: 40px 18px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .brand {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 800;
+    }
+
+    .brand p {
+      color: #d4af37;
+      font-style: italic;
+      margin-top: 8px;
+    }
+
+    .card {
+      background: #171717;
+      border: 1px solid #333333;
+      border-radius: 18px;
+      padding: 30px;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 25px;
+    }
+
+    .intro {
+      color: #dddddd;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    label {
+      display: block;
+      margin-top: 22px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #555555;
+      background: #0d0d0d;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid #d4af37;
+      border-color: transparent;
+    }
+
+    .check {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-top: 24px;
+      line-height: 1.5;
+    }
+
+    .check input {
+      width: auto;
+      margin-top: 4px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 28px;
+      padding: 16px;
+      border: 0;
+      border-radius: 10px;
+      background: #d4af37;
+      color: #111111;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: .9;
+    }
+
+    button:disabled {
+      opacity: .6;
+      cursor: wait;
+    }
+
+    .privacy {
+      margin-top: 18px;
+      color: #aaaaaa;
+      font-size: 13px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .success {
+      display: none;
+      text-align: center;
+      padding: 40px 10px;
+    }
+
+    .success h2 {
+      color: #d4af37;
+      font-size: 28px;
+    }
+
+    .success p {
+      line-height: 1.7;
+      color: #dddddd;
+    }
+
+    .error {
+      display: none;
+      margin-top: 18px;
+      color: #ffb3b3;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 35px;
+      line-height: 1.6;
+    }
+
+    footer strong {
+      display: block;
+    }
+
+    footer em {
+      color: #d4af37;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 25px 14px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .brand h1 {
+        font-size: 27px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="brand">
+    <h1>CreatorLoop™</h1>
+    <p>Building the Future of Creator Infrastructure.</p>
+  </div>
+
+  <div class="card">
+
+    <div id="formArea">
+
+      <h2>🎬 Submit Your Campaign Content</h2>
+
+      <div class="intro">
+        Ready for review? ✨
+        <br><br>
+        Submit your completed campaign content here.
+        Your submission goes privately to CreatorLoop Operations
+        and is not posted in the public creator community.
+        <br><br>
+        🛡️ Please review the campaign brief and approved claims
+        before submitting.
+      </div>
+
+      <form id="submissionForm">
+
+        <label for="creatorName">👤 Creator Name *</label>
+        <input
+          id="creatorName"
+          name="creator_name"
+          type="text"
+          required
+        >
+
+        <label for="email">📧 CreatorLoop Email *</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+        >
+
+        <label for="discord">💬 Discord Username *</label>
+        <input
+          id="discord"
+          name="discord_username"
+          type="text"
+          required
+        >
+
+        <label for="campaign">🎯 Campaign *</label>
+        <select id="campaign" name="campaign" required>
+          <option value="">Choose campaign</option>
+          <option value="PNB Campaign #1">PNB Campaign #1</option>
+        </select>
+
+        <label for="product">🐾 Product *</label>
+        <select id="product" name="product" required>
+          <option value="">Choose product</option>
+          <option value="Natural Dental Sticks">
+            Natural Dental Sticks
+          </option>
+          <option value="Nut Butter Blueberry & Chia Seed">
+            Nut Butter — Blueberry & Chia Seed
+          </option>
+          <option value="Trout & Beef Dog Food Topper">
+            Trout & Beef Dog Food Topper
+          </option>
+        </select>
+
+        <label for="platform">📱 Intended Platform *</label>
+        <select id="platform" name="platform" required>
+          <option value="">Choose platform</option>
+          <option>TikTok</option>
+          <option>Instagram</option>
+          <option>YouTube</option>
+          <option>Facebook</option>
+          <option>Other</option>
+        </select>
+
+        <label for="contentLink">🔗 Content Link *</label>
+        <input
+          id="contentLink"
+          name="content_link"
+          type="url"
+          placeholder="https://..."
+          required
+        >
+
+        <div class="privacy">
+          Your link must allow CreatorLoop Operations to view the content.
+          Do not post unpublished campaign content in a public Discord channel.
+        </div>
+
+        <label for="notes">📝 Creator Notes</label>
+        <textarea
+          id="notes"
+          name="creator_notes"
+          placeholder="Anything Operations should know about this submission?"
+        ></textarea>
+
+        <div class="check">
+          <input
+            id="confirmation"
+            name="claims_confirmation"
+            type="checkbox"
+            value="Confirmed"
+            required
+          >
+
+          <label for="confirmation" style="margin:0;">
+            I reviewed the campaign brief and Creator Claims requirements,
+            and this submission follows those instructions.
+          </label>
+        </div>
+
+        <button id="submitButton" type="submit">
+          📤 SUBMIT FOR REVIEW
+        </button>
+
+        <div id="errorMessage" class="error">
+          ⚠️ We couldn't submit your content. Please try again or contact
+          Creator Support in Discord.
+        </div>
+
+      </form>
+
+    </div>
+
+    <div id="successArea" class="success">
+
+      <h2>✅ Submission Received!</h2>
+
+      <p>
+        Your content has been sent privately to CreatorLoop Operations.
+      </p>
+
+      <p>
+        Your submission may move through:
+      </p>
+
+      <p>
+        🔍 Under Review<br>
+        🔄 Revision Requested<br>
+        ❌ Declined<br>
+        ✅ Accepted<br>
+        💰 Purchased / Licensed
+      </p>
+
+      <p>
+        Remember: submitting content does not automatically mean
+        the content has been accepted or purchased.
+      </p>
+
+      <p>
+        Keep an eye on CreatorLoop for your next update. 🐾✨
+      </p>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <strong>CreatorLoop™ × Puss-N-Boots</strong>
+    <em>Building the Future of Creator Infrastructure.</em>
+  </footer>
+
+</div>
+
+<script>
+  const WEBHOOK_URL =
+    "https://hooks.zapier.com/hooks/catch/25320023/4muur61/";
+
+  const form = document.getElementById("submissionForm");
+  const button = document.getElementById("submitButton");
+  const errorMessage = document.getElementById("errorMessage");
+
+  form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    button.disabled = true;
+    button.textContent = "⏳ SENDING...";
+    errorMessage.style.display = "none";
+
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    payload.submission_status = "Submitted";
+    payload.submission_source = "CreatorLoop Web Submission";
+    payload.submitted_at = new Date().toISOString();
+
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      document.getElementById("formArea").style.display = "none";
+      document.getElementById("successArea").style.display = "block";
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    } catch (error) {
+      errorMessage.style.display = "block";
+      button.disabled = false;
+      button.textContent = "📤 SUBMIT FOR REVIEW";
+    }
+  });
+</script>
+
+</body>
+</html>
